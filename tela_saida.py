@@ -1,21 +1,22 @@
 from tkinter import * 
 from Componentes import textos_predefinidos, radio_buttons
+from Registro import Registro
+from Pagina import Pagina
+import pandas as pd
 
-def pagina():
-    window.destroy()
-    window = Tk()
-    window.title('Registrar Dados Saída')
-    window.geometry("700x500")
+registro = Registro()
 
-    botao_home = Button(window, text='Registrar', command = lambda: main.pagina(window))
-    botao_home.place(x=15,y=30)
+def pagina(window):
+
+    # botao_home = Button(window, text='Registrar', command = lambda: main.pagina(window))
+    # botao_home.place(x=15,y=30)
     # Variaveis cujos valores serão definidos por RadioButtons 
 
     titulo_value = StringVar(window, "0")
     tipo_transacao = StringVar(window, "0")
     fluxo = StringVar(window, "0")
 
-    # Variãveis de Entrada, funcionam Inputs de texto
+    # Variáveis de Entrada, funcionam Inputs de texto
     entrada_titulo = Entry(window)
     entrada_titulo.place(x=72,y=227.5 + 80)
     valor = Entry(window)
@@ -64,7 +65,8 @@ def pagina():
         limpa_campos()
         
 
-
                 
-    botao_registro = Button(window, text='Registrar', command = lambda: realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), valor.get()) if fluxo.get() == "Entrada" else realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get()))
+    botao_registro = Button(window, text='Registrar', command = lambda: ((registro.novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), valor.get()) if fluxo.get() == "Entrada" else realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get())), limpa_campos() ))
     botao_registro.place(x=425,y=435)
+
+
