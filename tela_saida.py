@@ -1,7 +1,7 @@
 from tkinter import * 
 from Componentes import textos_predefinidos, radio_buttons
-import main
-def pagina(window):
+
+def pagina():
     window.destroy()
     window = Tk()
     window.title('Registrar Dados Saída')

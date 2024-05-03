@@ -1,14 +1,14 @@
 from tkinter import * 
 from Componentes import textos_predefinidos, radio_buttons
-import main
 
-def pagina(window):
+def pagina():
+    global window
     window.destroy()
     window = Tk()
     window.title('Registrar Dados Entrada')
     window.geometry("700x500")
     
-    botao_home = Button(window, text='Registrar', command = lambda: main.pagina(window))
+    botao_home = Button(window, text='Registrar', command=main.pagina)
     botao_home.place(x=15,y=30)
     
     # Variaveis cujos valores serão definidos por RadioButtons 
