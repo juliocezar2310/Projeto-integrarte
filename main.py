@@ -3,7 +3,7 @@ import pandas as pd
 import tela_entrada
 import tela_saida
 import tela_planilha_mensal
-from Pagina import Pagina
+# from Pagina import Pagina
 
 window = Tk()
 window.geometry("700x500")

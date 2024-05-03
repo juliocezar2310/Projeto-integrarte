@@ -1,7 +1,7 @@
 from tkinter import * 
 from Componentes import textos_predefinidos, radio_buttons
 from Registro import Registro
-from Pagina import Pagina
+# from Pagina import Pagina
 import pandas as pd
 
 registro = Registro()

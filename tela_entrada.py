@@ -1,5 +1,5 @@
 from tkinter import * 
-from Componentes import textos_predefinidos, radio_buttons
+from Componentes import textos_predefinidos, radio_buttons, radio_buttons_entrada, radio_buttons_tipo_transacao
 
 def pagina(window):
     # Variaveis cujos valores serão definidos por RadioButtons 
@@ -19,7 +19,9 @@ def pagina(window):
     textos_predefinidos(window)
 
     # Posiciona os RadioButtons em suas devidas posições
-    radio_buttons(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
+    radio_buttons_entrada(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
+    radio_buttons_tipo_transacao(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
+    # radio_buttons(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
 
 
 
