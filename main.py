@@ -27,8 +27,10 @@ def tela_registro_entrada():
     window = Tk()
     window.geometry("700x500")
 
+    tela_entrada.pagina(window)
+
     btn_pagina_inicial = Button(window, text='voltar', command=home)
-    btn_pagina_inicial.place(x=15, y=15)
+    btn_pagina_inicial.place(x=15, y=10)
 
 def tela_registro_saida():
     global window
@@ -36,8 +38,10 @@ def tela_registro_saida():
     window = Tk()
     window.geometry("700x500")
 
+    tela_saida.pagina(window)
+
     btn_pagina_inicial = Button(window, text='voltar', command=home)
-    btn_pagina_inicial.place(x=15, y=15)
+    btn_pagina_inicial.place(x=15, y=10)
 
 def tela_relatorio_mensal():
     global window
@@ -45,8 +49,10 @@ def tela_relatorio_mensal():
     window = Tk()
     window.geometry("700x500")
 
+    tela_planilha_mensal.pagina(window)
+
     btn_pagina_inicial = Button(window, text='voltar', command=home)
-    btn_pagina_inicial.place(x=15, y=15)
+    btn_pagina_inicial.place(x=15, y=10)
 
 # pagina(window)
 

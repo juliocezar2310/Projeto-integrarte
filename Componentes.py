@@ -12,7 +12,7 @@ from tkinter import *
 
 def textos_predefinidos(window):
     titulo_entrada = Label(window, text="Entrada", font="times 16 bold")
-    titulo_entrada.place(x=10, y=20)
+    titulo_entrada.place(x=10, y=20+20)
 
     titulo_saida = Label(window, text="Saída", font="times 16 bold")
     titulo_saida.place(x=460, y=20)
@@ -25,7 +25,7 @@ def textos_predefinidos(window):
 
 
     titulo_tt = Label(window, text="Tipo de Transação", font="times 16 bold")
-    titulo_tt.place(x=20, y=120)
+    titulo_tt.place(x=20, y=130+20)
 
     titulo_ent_saida = Label(window, text="Entrada/Saída", font="times 12 bold")
     titulo_ent_saida.place(x=300, y=415)
@@ -42,11 +42,11 @@ def radio_buttons(window, titulo_value, tipo_transacao, fluxo, e2):
     
 
     tipo_entrada_doacao = Radiobutton(window, text="Doação", variable=titulo_value, value="Doação")
-    tipo_entrada_doacao.place(x=20,y=45)
+    tipo_entrada_doacao.place(x=20,y=45+20)
     tipo_entrada_mensalidade = Radiobutton(window, text="Mensalidade", variable=titulo_value, value="Mensalidade")
-    tipo_entrada_mensalidade.place(x=20,y=65)
+    tipo_entrada_mensalidade.place(x=20,y=65+20)
     tipo_entrada_acao_social = Radiobutton(window, text="Ação", variable=titulo_value, value="Ação")
-    tipo_entrada_acao_social.place(x=20,y=85)
+    tipo_entrada_acao_social.place(x=20,y=85+20)
 
     tipo_saida_c_agua = Radiobutton(window, text="Conta de Água", variable=titulo_value, value="Conta de Água", command=lambda: hide_campo_outros(e2))
     tipo_saida_c_agua.place(x=356,y=45)
@@ -62,9 +62,9 @@ def radio_buttons(window, titulo_value, tipo_transacao, fluxo, e2):
 
 
     tipo_transacao_cb = Radiobutton(window, text="Conta Bancária/pix", variable=tipo_transacao, value="Conta Bancária/pix")
-    tipo_transacao_cb.place(x=20,y=150)
+    tipo_transacao_cb.place(x=20,y=160+20)
     tipo_transacao_dinheiro = Radiobutton(window, text="Dinheiro", variable=tipo_transacao, value="Dinheiro")
-    tipo_transacao_dinheiro.place(x=20,y=170)
+    tipo_transacao_dinheiro.place(x=20,y=180+20)
 
     entrada = Radiobutton(window, text="Entrada", variable=fluxo, value="Entrada")
     entrada.place(x=300,y=435)
