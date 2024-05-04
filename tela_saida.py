@@ -1,5 +1,5 @@
 from tkinter import * 
-from Componentes import textos_predefinidos, radio_buttons
+from Componentes import textos_predefinidos, radio_buttons_saida, radio_buttons_tipo_transacao
 from Registro import Registro
 # from Pagina import Pagina
 import pandas as pd
@@ -25,11 +25,11 @@ def pagina(window):
 
 
     # Posiciona os textos em suas devidas posições
-    textos_predefinidos(window)
+    textos_predefinidos(window, 'Saída')
 
     # Posiciona os RadioButtons em suas devidas posições
-    radio_buttons(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
-
+    radio_buttons_saida(window, titulo_value, entrada_opcional)
+    radio_buttons_tipo_transacao(window, tipo_transacao)
 
 
 
@@ -66,7 +66,7 @@ def pagina(window):
         
 
                 
-    botao_registro = Button(window, text='Registrar', command = lambda: ((registro.novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), valor.get()) if fluxo.get() == "Entrada" else realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get())), limpa_campos() ))
+    botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Saída", tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get()), limpa_campos()))
     botao_registro.place(x=425,y=435)
 
 

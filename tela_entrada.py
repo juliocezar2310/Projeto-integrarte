@@ -1,5 +1,8 @@
 from tkinter import * 
-from Componentes import textos_predefinidos, radio_buttons, radio_buttons_entrada, radio_buttons_tipo_transacao
+from Componentes import textos_predefinidos, radio_buttons_entrada, radio_buttons_tipo_transacao
+from Registro import Registro 
+
+registro = Registro()
 
 def pagina(window):
     # Variaveis cujos valores serão definidos por RadioButtons 
@@ -16,11 +19,11 @@ def pagina(window):
 
 
     # Posiciona os textos em suas devidas posições
-    textos_predefinidos(window)
+    textos_predefinidos(window, "Entrada")
 
     # Posiciona os RadioButtons em suas devidas posições
-    radio_buttons_entrada(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
-    radio_buttons_tipo_transacao(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
+    radio_buttons_entrada(window, titulo_value)
+    radio_buttons_tipo_transacao(window, tipo_transacao)
     # radio_buttons(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
 
 
@@ -34,31 +37,8 @@ def pagina(window):
         entrada_titulo.delete(0, 'end')
         entrada_opcional.delete(0, 'end')
         valor.delete(0, 'end')
-        
-    #
-    def realiza_novo_registro(fluxo, tipo_entrada, titulo, nome_beneficiario, valor):
-
-        if(fluxo != "Entrada"):
-            print("nome_beneficiario", nome_beneficiario)
-            print("titulo", titulo)
-            if titulo != "" and nome_beneficiario == "":
-                print("tudo, menos adicional")
-                nome_beneficiario = 'Integrarte'
-            else: 
-                titulo = nome_beneficiario
-                nome_beneficiario = 'Integrarte'
-
-        arquivofinal = pd.read_csv('registro_integrarte.csv')
-
-        dados_dict = {"fluxo": fluxo, "tipo_entrada": tipo_entrada, "titulo": titulo, "nome_beneficiario": nome_beneficiario, "valor": valor}
-        dados_df = pd.DataFrame([dados_dict])
-        dados = pd.concat([arquivofinal, dados_df], ignore_index=True)
-
-        dados.to_csv('registro_integrarte.csv', index=False)
-        limpa_campos()
-        
 
 
                 
-    botao_registro = Button(window, text='Registrar', command = lambda: realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), valor.get()) if fluxo.get() == "Entrada" else realiza_novo_registro(fluxo.get(), tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get()))
+    botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Entrada", tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get()), limpa_campos()))
     botao_registro.place(x=425,y=435)
