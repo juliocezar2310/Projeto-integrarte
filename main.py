@@ -18,13 +18,33 @@ def home():
     window.title('Página Principal')
     window.geometry("700x500")
 
+    #coloração do fundo PRINCIPAL
+    window.configure(background="#6DC24B")
+
+    #CRIAÇÃO DO FRAME
+    frame_inicio = Frame(window)
+
+    #coloração do fundo SECUNDÁRIO
+    frame_inicio.configure(background="white")
+
+    #TENTATIVA DE COLOCAR IMAGEM MAIS NÃO PEGOU :(
+    # img = PhotoImage(file="images/logo-integrate.GIF")
+    # label_imagem = Label(frame_inicio, image= img)
+    # label_imagem.place(x=170,y=80)
+
+    #Texto onde ficaria a logo
+    texto_pagina_entrada = Label(frame_inicio,text="Logo - INTEGARTE",font=("Arial",20))
+    texto_pagina_entrada.place(x=176,y=80)
     
-    btn_pagina_entrada = Button(window, text='Mudar para Página 1', command=tela_registro_entrada)
-    btn_pagina_entrada.place(x=15, y=15)
-    btn_pagina_saida = Button(window, text='Mudar para Página 2', command=tela_registro_saida)
-    btn_pagina_saida.place(x=15, y=45)
-    btn_pagina_planilha = Button(window, text='Mudar para Página 3', command=tela_relatorio_mensal)
-    btn_pagina_planilha.place(x=15, y=75)
+    btn_pagina_entrada = Button(frame_inicio, text='Mudar para Página 1',font=("Arial",13), bg="#FFA500", fg="white", command=tela_registro_entrada)
+    btn_pagina_entrada.place(x=214, y=175)
+    btn_pagina_saida = Button(frame_inicio, text='Mudar para Página 2',font=("Arial",13), bg="#FFA500", fg="white", command=tela_registro_saida)
+    btn_pagina_saida.place(x=214, y=235)
+    btn_pagina_planilha = Button(frame_inicio, text='Mudar para Página 3',font=("Arial",13), bg="#FFA500", fg="white", command=tela_relatorio_mensal)
+    btn_pagina_planilha.place(x=214, y=295)
+
+    frame_inicio.place(relx=0.076,rely=0.1,relwidth=0.85,relheight=0.8)
+
 
 
 def tela_registro_entrada():
