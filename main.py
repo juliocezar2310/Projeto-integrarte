@@ -3,7 +3,7 @@ import pandas as pd
 import tela_entrada
 import tela_saida
 import tela_planilha_mensal
-# from Pagina import Pagina
+from PIL import Image, ImageTk
 
 window = Tk()
 window.geometry("700x500")
@@ -11,8 +11,6 @@ window.geometry("700x500")
 
 def home():
     global window
-    # pagina = Pagina()
-    # pagina.base(window, 'Página Principal')
     window.destroy()
     window = Tk()
     window.title('Página Principal')
@@ -27,15 +25,13 @@ def home():
     #coloração do fundo SECUNDÁRIO
     frame_inicio.configure(background="white")
 
-    #TENTATIVA DE COLOCAR IMAGEM MAIS NÃO PEGOU :(
-    # img = PhotoImage(file="images/logo-integrate.GIF")
-    # label_imagem = Label(frame_inicio, image= img)
-    # label_imagem.place(x=170,y=80)
+    img = Image.open('images/logo-integrate.JPG')
+    img = img.resize((278, 128))
+    img = ImageTk.PhotoImage(img)
+    panel = Label(frame_inicio, image=img, borderwidth=0)
+    panel.image = img
+    panel.pack()
 
-    #Texto onde ficaria a logo
-    texto_pagina_entrada = Label(frame_inicio,text="Logo - INTEGARTE",font=("Arial",20))
-    texto_pagina_entrada.place(x=176,y=80)
-    
     btn_pagina_entrada = Button(frame_inicio, text='Mudar para Página 1',font=("Arial",13), bg="#FFA500", fg="white", command=tela_registro_entrada)
     btn_pagina_entrada.place(x=214, y=175)
     btn_pagina_saida = Button(frame_inicio, text='Mudar para Página 2',font=("Arial",13), bg="#FFA500", fg="white", command=tela_registro_saida)
