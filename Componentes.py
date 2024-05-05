@@ -24,8 +24,6 @@ def textos_predefinidos(window, fluxo):
     titulo_tt = Label(window, text="Tipo de Transação", font="times 16 bold")
     titulo_tt.place(x=20, y=130+20+20)
 
-    titulo_ent_saida = Label(window, text="Entrada/Saída", font="times 12 bold")
-    titulo_ent_saida.place(x=300, y=415)
 
 def show_campo_outros(button):
     button.pack()

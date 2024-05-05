@@ -1,14 +1,18 @@
-fluxo,tipo_entrada,titulo,nome_beneficiario,valor,tipo_transacao
-Conta Bancária/pix,Ação,asc,34,,
-Conta Bancária/pix,Ação,Integrarte,34,,
-Conta Bancária/pix,Ação,Integrarte,34,,
-Conta Bancária/pix,Mensalidade,Creagesdfas,5461651,,
-Conta Bancária/pix,Ação,ds,asdf,,
-Conta Bancária/pix,Mensalidade,asda,.!entry3,,
-Dinheiro,Conta de Água,Integrarte,.!entry3,,
-Dinheiro,Internet,Integrarte,.!entry3,,
-Dinheiro,basdfasd,Integrarte,5446,,
-Dinheiro,Mensalidade,asdfsadf,3432,,
-Conta Bancária/pix,Mensalidade,kjlk,58,,
-Saída,,Conta de Água,Integrarte,,Conta Bancária/pix
-Entrada,,Mensalidade,,,Conta Bancária/pix
+fluxo,tipo_transacao,titulo,nome_beneficiario,valor
+Ação,asc,34,,
+Ação,Integrarte,34,,
+Ação,Integrarte,34,,
+Mensalidade,Creagesdfas,5461651,,
+Ação,ds,asdf,,
+Mensalidade,asda,.!entry3,,
+Conta de Água,Integrarte,.!entry3,,
+Internet,Integrarte,.!entry3,,
+basdfasd,Integrarte,5446,,
+Mensalidade,asdfsadf,3432,,
+Mensalidade,kjlk,58,,
+,Conta de Água,Integrarte,,Conta Bancária/pix
+,Mensalidade,,,Conta Bancária/pix
+Entrada,Dinheiro,Mensalidade,,
+Entrada,Conta Bancária/pix,Doação,,
+Entrada,Conta Bancária/pix,Mensalidade,teste,132.0
+Saída,Dinheiro,Pagamento Professores,Integrarte,

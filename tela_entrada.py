@@ -40,5 +40,5 @@ def pagina(window):
 
 
                 
-    botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Entrada", tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), valor.get()), limpa_campos()))
+    botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Entrada", tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), float(valor.get())), limpa_campos()))
     botao_registro.place(x=425,y=435)
