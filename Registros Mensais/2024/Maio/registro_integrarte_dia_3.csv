@@ -1,0 +1,6 @@
+fluxo,tipo_transacao,titulo,nome_beneficiario,valor
+Saída,Conta Bancária/pix,Conta de Água,Integrarte,54.0
+Entrada,Conta Bancária/pix,Mensalidade,PP,32.0
+Saída,Conta Bancária/pix,k,Integrarte,456.0
+Saída,Conta Bancária/pix,Pagamento Professores,Integrarte,153.0
+
