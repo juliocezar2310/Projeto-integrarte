@@ -30,6 +30,10 @@ def show_campo_outros(button):
     button.place(x=75 + 340,y=150)
 def hide_campo_outros(button):
     button.pack_forget()
+
+def corrige_titulo(titulo, e2):
+    e2 = titulo
+        
         
 
 def radio_buttons_entrada(window, titulo_value): 

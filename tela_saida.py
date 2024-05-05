@@ -14,7 +14,6 @@ def pagina(window):
 
     titulo_value = StringVar(window, "0")
     tipo_transacao = StringVar(window, "0")
-    fluxo = StringVar(window, "0")
 
     # Variáveis de Entrada, funcionam Inputs de texto
     entrada_titulo = Entry(window)
@@ -28,42 +27,20 @@ def pagina(window):
     textos_predefinidos(window, 'Saída')
 
     # Posiciona os RadioButtons em suas devidas posições
-    radio_buttons_saida(window, titulo_value, entrada_opcional)
+    radio_buttons_saida(window, titulo_value, entrada_opcional )
     radio_buttons_tipo_transacao(window, tipo_transacao)
 
 
 
     # Após registrar os dados em um csv, ele vai limpar os campos, para que o usuário possa realizar seu próximo registro
     def limpa_campos():
-        fluxo.set(None)
         tipo_transacao.set(None)
         titulo_value.set(None)
         entrada_titulo.delete(0, 'end')
         entrada_opcional.delete(0, 'end')
         valor.delete(0, 'end')
         
-    #
-    def realiza_novo_registro(fluxo, tipo_entrada, titulo, nome_beneficiario, valor):
-
-        if(fluxo != "Entrada"):
-            print("nome_beneficiario", nome_beneficiario)
-            print("titulo", titulo)
-            if titulo != "" and nome_beneficiario == "":
-                print("tudo, menos adicional")
-                nome_beneficiario = 'Integrarte'
-            else: 
-                titulo = nome_beneficiario
-                nome_beneficiario = 'Integrarte'
-
-        arquivofinal = pd.read_csv('registro_integrarte.csv')
-
-        dados_dict = {"fluxo": fluxo, "tipo_entrada": tipo_entrada, "titulo": titulo, "nome_beneficiario": nome_beneficiario, "valor": valor}
-        dados_df = pd.DataFrame([dados_dict])
-        dados = pd.concat([arquivofinal, dados_df], ignore_index=True)
-
-        dados.to_csv('registro_integrarte.csv', index=False)
-        limpa_campos()
-        
+       
 
                 
     botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Saída", tipo_transacao.get(), titulo_value.get(), entrada_opcional.get(), float(valor.get())), limpa_campos()))

@@ -4,6 +4,8 @@ from Registro import Registro
 
 registro = Registro()
 
+
+
 def pagina(window):
     # Variaveis cujos valores serão definidos por RadioButtons 
     titulo_value = StringVar(window, "0")
@@ -25,20 +27,12 @@ def pagina(window):
     radio_buttons_entrada(window, titulo_value)
     radio_buttons_tipo_transacao(window, tipo_transacao)
     # radio_buttons(window, titulo_value, tipo_transacao, fluxo, entrada_opcional)
-
-
-
-
-    # Após registrar os dados em um csv, ele vai limpar os campos, para que o usuário possa realizar seu próximo registro
     def limpa_campos():
-        fluxo.set(None)
         tipo_transacao.set(None)
         titulo_value.set(None)
         entrada_titulo.delete(0, 'end')
         entrada_opcional.delete(0, 'end')
         valor.delete(0, 'end')
-
-
                 
     botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Entrada", tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), float(valor.get())), limpa_campos()))
     botao_registro.place(x=425,y=435)
