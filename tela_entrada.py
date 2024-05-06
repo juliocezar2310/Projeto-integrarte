@@ -14,9 +14,9 @@ def pagina(window):
 
     # Variãveis de Entrada, funcionam Inputs de texto
     entrada_titulo = Entry(window)
-    entrada_titulo.place(x=72,y=227.5 + 80)
+    entrada_titulo.place(x=190,y=185)
     valor = Entry(window)
-    valor.place(x=72,y=257 + 80)
+    valor.place(x=390,y=185)
     entrada_opcional = Entry(window)
 
 
@@ -35,4 +35,4 @@ def pagina(window):
         valor.delete(0, 'end')
                 
     botao_registro = Button(window, text='Registrar', command = lambda: (registro.novo_registro("Entrada", tipo_transacao.get(), titulo_value.get(), entrada_titulo.get(), float(valor.get())), limpa_campos()))
-    botao_registro.place(x=425,y=435)
+    botao_registro.place(x=455, y=220)

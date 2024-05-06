@@ -21,14 +21,19 @@ def home():
 
     #CRIAÇÃO DO FRAME
     frame_inicio = Frame(window)
+    img = Image.open("images/integrarte.jpg")
+    img = img.resize((600, 400))
+    photo = ImageTk.PhotoImage(img)
+    label_imagem = Label(frame_inicio, image=photo)
+    label_imagem.image = photo 
+    label_imagem.pack()
 
-    #coloração do fundo SECUNDÁRIO
-    frame_inicio.configure(background="white")
-
-    img = Image.open('images/logo-integrate.JPG')
+    img = Image.open('images/logo.JPG')
     img = img.resize((278, 128))
     img = ImageTk.PhotoImage(img)
     panel = Label(frame_inicio, image=img, borderwidth=0)
+    label_imagem.img = img
+    label_imagem.place(x=-3, y=-3)
     panel.image = img
     panel.pack()
 

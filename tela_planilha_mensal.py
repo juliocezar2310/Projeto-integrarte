@@ -6,15 +6,16 @@ def pagina(window):
 
     # Variáveis de Entrada, funcionam Inputs de texto
     ano = Entry(window)
-    ano.place(x=50,y=234.5 + 80)
+    ano.place(x=100 + 50,y=234.5 + 80 - 180)
+
     mes = Entry(window)
-    mes.place(x=50,y=264.5 + 110)
+    mes.place(x=100 + 280,y=234.5 + 80 - 180)
     
     label_ano = Label(window, text="Ano:", font="times 12")
-    label_ano.place(x=20, y=235 + 60)
+    label_ano.place(x=100 + 20, y=235 + 60 - 180)
     
     label_mes = Label(window, text="Mês:", font="times 12")
-    label_mes.place(x=20, y=235 + 120)
+    label_mes.place(x=100 + 250, y=235 + 60 - 180)
        
     #
     def gerar_relatorio(ano, mes):
@@ -24,6 +25,7 @@ def pagina(window):
         mes_selecionado = meses[int(mes) - 1]
         arquivos = os.listdir(f'Registros Mensais/{ano}/{mes_selecionado}')
         df = pd.DataFrame()
+
         if len(arquivos) > 1:
             df_primario = pd.read_csv(f'Registros Mensais/{ano}/{mes_selecionado}/{arquivos[0]}')
             for i in range(len(arquivos)):

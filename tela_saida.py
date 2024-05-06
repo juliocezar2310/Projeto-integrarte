@@ -17,9 +17,9 @@ def pagina(window):
 
     # Variáveis de Entrada, funcionam Inputs de texto
     entrada_titulo = Entry(window)
-    entrada_titulo.place(x=72,y=227.5 + 80)
+    entrada_titulo.place(x=190,y=180)
     valor = Entry(window)
-    valor.place(x=72,y=257 + 80)
+    valor.place(x=390,y=180)
     entrada_opcional = Entry(window)
 
 

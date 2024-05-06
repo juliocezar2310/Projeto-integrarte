@@ -24,25 +24,22 @@ def textos_predefinidos(window, fluxo):
     titulo_tt = Label(window, text="Tipo de Transação", font="times 16 bold")
     titulo_tt.place(x=150, y=40)
 
+   
 
 def show_campo_outros(button):
     button.pack()
     button.place(x=75 + 340,y=150)
 def hide_campo_outros(button):
     button.pack_forget()
-
-def corrige_titulo(titulo, e2):
-    e2 = titulo
-        
         
 
 def radio_buttons_entrada(window, titulo_value): 
     tipo_entrada_doacao = Radiobutton(window, text="Doação", variable=titulo_value, value="Doação")
-    tipo_entrada_doacao.place(x=188,y=45+20)
+    tipo_entrada_doacao.place(x=188,y=45+40)
     tipo_entrada_mensalidade = Radiobutton(window, text="Mensalidade", variable=titulo_value, value="Mensalidade")
-    tipo_entrada_mensalidade.place(x=188,y=65+20)
+    tipo_entrada_mensalidade.place(x=188,y=65+40)
     tipo_entrada_acao_social = Radiobutton(window, text="Ação", variable=titulo_value, value="Ação")
-    tipo_entrada_acao_social.place(x=188,y=85+20)
+    tipo_entrada_acao_social.place(x=188,y=85+40)
 
 
 
@@ -57,13 +54,11 @@ def radio_buttons_saida(window, titulo_value, e2):
     tipo_saida_p_prof.place(x=150,y=110)
     tipo_saida_outros = Radiobutton(window, text="Outros", variable=titulo_value, value="Outros", command=lambda: show_campo_outros(e2))
     tipo_saida_outros.place(x=150,y=150)
-
-
 def radio_buttons_tipo_transacao(window, tipo_transacao): 
     tipo_transacao_cb = Radiobutton(window, text="Conta Bancária/pix", variable=tipo_transacao, value="Conta Bancária/pix")
-    tipo_transacao_cb.place(x=360,y=65)
+    tipo_transacao_cb.place(x=360,y=45+ 40)
     tipo_transacao_dinheiro = Radiobutton(window, text="Dinheiro", variable=tipo_transacao, value="Dinheiro")
-    tipo_transacao_dinheiro.place(x=360,y=85)
+    tipo_transacao_dinheiro.place(x=360,y=65+ 40)
 
 
 
@@ -95,7 +90,7 @@ def radio_buttons(window, titulo_value, tipo_transacao, fluxo, e2):
     tipo_transacao_dinheiro.place(x=20,y=180+20)
 
     entrada = Radiobutton(window, text="Entrada", variable=fluxo, value="Entrada")
-    entrada.place(x=300,y=435)
+    entrada.place(x=300,y=380)
 
     
     saida = Radiobutton(window, text="Saída", variable=fluxo, value="Saída")
