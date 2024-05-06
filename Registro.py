@@ -11,6 +11,7 @@ class Registro:
         self.tipo_transacao = None
         self.valor = None
         self.nome_arquivo = None
+        self.diretorio_mensal = None
         self.cria_diretorios()
 
 
@@ -23,15 +24,6 @@ class Registro:
         if not os.path.exists(f'Registros Mensais/2024/{mes}'):
             os.mkdir(f'Registros Mensais/2024/{mes}')
         self.diretorio_mensal = f'Registros Mensais/2024/{mes}'
-        print(mes_numerico)
-        # print(date.day)
-        print(date.today().day)
-        print(type(date.today().day))
-        # if date.
-
-        # self.registro_do_dia = f'Registros Mensais/2024/{mes}'
-
-
     
     def validar_dados(self, fluxo, tipo_transacao, titulo, nome_beneficiario, valor):
         self.fluxo = fluxo
@@ -55,13 +47,13 @@ class Registro:
         registro = pd.read_csv(nome_arquivo, )
         return registro
 
-
-            
-
     def salvar_registro(self, df):
         arquivofinal = self.verificar_registros_do_dia()
         dados = pd.concat([arquivofinal, df], ignore_index=True)
         dados.to_csv(self.nome_arquivo, index=False)
+
+    # def relatorio_mensal(self):
+
     
     def novo_registro(self, fluxo, tipo_transacao, titulo, nome_beneficiario, valor):
         self.validar_dados(fluxo, tipo_transacao, titulo, nome_beneficiario, valor)
