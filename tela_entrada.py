@@ -21,7 +21,7 @@ def pagina(window):
 
 
     # Posiciona os textos em suas devidas posições
-    textos_predefinidos(window, "Entrada")
+    textos_predefinidos(window, "Fonte de Receita")
 
     # Posiciona os RadioButtons em suas devidas posições
     radio_buttons_entrada(window, titulo_value)

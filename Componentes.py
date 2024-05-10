@@ -37,26 +37,45 @@ def corrige_titulo(titulo, e2):
         
 
 def radio_buttons_entrada(window, titulo_value): 
-    tipo_entrada_doacao = Radiobutton(window, text="Doação", variable=titulo_value, value="Doação")
+    tipo_entrada_doacao = Radiobutton(window, text="Família", variable=titulo_value, value="Doação")
     tipo_entrada_doacao.place(x=20,y=45+20)
-    tipo_entrada_mensalidade = Radiobutton(window, text="Mensalidade", variable=titulo_value, value="Mensalidade")
+    tipo_entrada_mensalidade = Radiobutton(window, text="Sócios", variable=titulo_value, value="Mensalidade")
     tipo_entrada_mensalidade.place(x=20,y=65+20)
-    tipo_entrada_acao_social = Radiobutton(window, text="Ação", variable=titulo_value, value="Ação")
-    tipo_entrada_acao_social.place(x=20,y=85+20)
+    tipo_entrada_acao_social = Radiobutton(window, text="Doação", variable=titulo_value, value="Ação")
+    tipo_entrada_acao_social.place(x=100,y=45+20)
+    tipo_entrada_acao_social = Radiobutton(window, text="Eventos", variable=titulo_value, value="Ação")
+    tipo_entrada_acao_social.place(x=100,y=65+20)
 
 
 
 def radio_buttons_saida(window, titulo_value, e2): 
-    tipo_saida_c_agua = Radiobutton(window, text="Conta de Água", variable=titulo_value, value="Conta de Água", command=lambda: hide_campo_outros(e2))
-    tipo_saida_c_agua.place(x=356 - 336,y=45+20)
-    tipo_saida_c_internet = Radiobutton(window, text="Internet", variable=titulo_value, value="Internet", command=lambda: hide_campo_outros(e2))
-    tipo_saida_c_internet.place(x=484 - 336,y=45+20)
-    tipo_saida_c_luz = Radiobutton(window, text="Conta de Luz", variable=titulo_value, value="Conta de Luz", command=lambda: hide_campo_outros(e2))
-    tipo_saida_c_luz.place(x=356 - 336,y=65+20)
-    tipo_saida_p_prof = Radiobutton(window, text="Pagamento Professores", variable=titulo_value, value="Pagamento Professores", command=lambda: hide_campo_outros(e2))
-    tipo_saida_p_prof.place(x=484 - 336,y=65+20)
+    tipo_saida_c_agua = Radiobutton(window, text="Água", variable=titulo_value, value="Água", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_agua.place(x=20,y=45+20)
+    tipo_saida_c_luz = Radiobutton(window, text="Luz", variable=titulo_value, value="Luz", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_luz.place(x=20,y=65+20)
     tipo_saida_outros = Radiobutton(window, text="Outros", variable=titulo_value, value="Outros", command=lambda: show_campo_outros(e2))
-    tipo_saida_outros.place(x=356 - 336,y=85+20)
+    tipo_saida_outros.place(x=20,y=85+20)
+    tipo_saida_c_agua = Radiobutton(window, text="Psicologo", variable=titulo_value, value="Psicologo", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_agua.place(x=90,y=45+20)
+    tipo_saida_c_luz = Radiobutton(window, text="Administração", variable=titulo_value, value="Administração", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_luz.place(x=90,y=65+20)
+    tipo_saida_c_internet = Radiobutton(window, text="Internet", variable=titulo_value, value="Internet", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_internet.place(x=210,y=45+20)
+    tipo_saida_p_prof = Radiobutton(window, text="Professores", variable=titulo_value, value="Professores", command=lambda: hide_campo_outros(e2))
+    tipo_saida_p_prof.place(x=210,y=65+20)
+
+    tipo_saida_c_internet = Radiobutton(window, text="Comunicação", variable=titulo_value, value="Comunicação", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_internet.place(x=300,y=45+20)
+    tipo_saida_c_luz = Radiobutton(window, text="Serviços Gerais", variable=titulo_value, value="Serviços Gerais", command=lambda: hide_campo_outros(e2))
+    tipo_saida_c_luz.place(x=300,y=65+20)
+
+
+    tipo_saida_p_prof = Radiobutton(window, text="Serviços Diversos", variable=titulo_value, value="Serviços Diversos", command=lambda: hide_campo_outros(e2))
+    tipo_saida_p_prof.place(x=80+100 + 100 + 484 - 336,y=65+20)
+    tipo_saida_p_prof = Radiobutton(window, text="Contabilidade", variable=titulo_value, value="Contabilidade", command=lambda: hide_campo_outros(e2))
+    tipo_saida_p_prof.place(x=80+100 + 100 + 484 - 336,y=45+20)
+    tipo_saida_p_prof = Radiobutton(window, text="Materiais", variable=titulo_value, value="Materiais", command=lambda: hide_campo_outros(e2))
+    tipo_saida_p_prof.place(x=160+400,y=45+20)
 
 
 def radio_buttons_tipo_transacao(window, tipo_transacao): 
