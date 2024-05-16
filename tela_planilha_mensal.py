@@ -1,3 +1,5 @@
+import os
+import pandas as pd
 from tkinter import * 
 from Componentes import textos_predefinidos, radio_buttons
 
@@ -18,8 +20,6 @@ def pagina(window):
        
     #
     def gerar_relatorio(ano, mes):
-        import os
-        import pandas as pd
         meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
         mes_selecionado = meses[int(mes) - 1]
         arquivos = os.listdir(f'Registros Mensais/{ano}/{mes_selecionado}')
@@ -41,7 +41,7 @@ def pagina(window):
         else: 
             df['Total Lucro'] = soma_entrada - soma_saida
             
-        df.to_csv(f'Registros Mensais/{ano}/{mes_selecionado}/Relatório Mensal {mes_selecionado}.csv', index=False)
+        df.to_excel(f'Registros Mensais/{ano}/{mes_selecionado}/Relatório Mensal {mes_selecionado}.xlsx', index=False)
 
 
                 

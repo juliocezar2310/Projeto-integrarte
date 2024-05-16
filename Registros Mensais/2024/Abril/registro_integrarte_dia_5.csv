@@ -1,0 +1,5 @@
+fluxo,tipo_transacao,titulo,nome_beneficiario,valor
+Saída,Conta Bancária/pix,516,Integrarte,153.0
+Saída,Conta Bancária/pix,Internet,Integrarte,153.0
+Entrada,Conta Bancária/pix,Mensalidade,alberto ,51.0
+Entrada,Conta Bancária/pix,Mensalidade,Crisom,12.0
