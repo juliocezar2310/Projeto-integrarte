@@ -18,18 +18,20 @@ def pagina(window):
 
     def registro_aluno(documento):
         def pagina_registro_aluno(aluno):
+            print(aluno)
             janela_aluno = Tk()
-            janela_aluno.title(f'Dados {aluno["nome aluno"].values[0]}')
+            janela_aluno.title(f'Dados {aluno["nome"].values[0]}')
             janela_aluno.geometry("1200x600")
 
             canvas = Canvas(janela_aluno)
-            canvas.create_line(10, 85, 1000, 85)
+            canvas.create_line(10, 83, 1000, 83)
             canvas.create_line(10, 130, 1000, 130)
 
 
-            canvas.create_line(300, 85, 300, 300)
-            canvas.create_line(345, 85, 345, 300)
-            canvas.create_line(300, 85, 300, 300)
+            canvas.create_line(300, 83, 300, 300)
+            canvas.create_line(345, 83, 345, 300)
+            canvas.create_line(395, 83, 395, 300)
+            canvas.create_line(438, 83, 438, 300)
             # canvas.create_line(10, 85, 1000, 85)
             # canvas.create_line(10, 115, 1000, 115)
             canvas.pack(fill=BOTH, expand=1)
@@ -42,20 +44,44 @@ def pagina(window):
             nome_l = Label(janela_aluno, text="Nome", font="times 13")
             nome_l.place(x=15, y=108)
 
-
-            nome_l = Label(janela_aluno, text="Ano", font="times 13")
-            nome_l.place(x=305, y=108)
-            
-            nome = Label(janela_aluno, text='Lucas Matheus de Oliveira Ramos Oliveira', font="times 12")
-            # nome = Label(janela_aluno, text=aluno["nome aluno"].values[0], font="times 13")
+            # nome = Label(janela_aluno, text=aluno["nome"].values[0], font="times 12")
+            # nome.place(x=15, y=135)
+            nome = Label(janela_aluno, text='Lucas Matheus de Oliveira Ramos'*10, wraplength=280, justify='center', font="times 12")
             nome.place(x=15, y=135)
-            
 
+
+            data_l = Label(janela_aluno, text="Ano", font="times 13")
+            data_l.place(x=304, y=108)
+            data_v = Label(janela_aluno, text=aluno["ano"].values[0], font="times 13")
+            data_v.place(x=304, y=135)
+            
+            data_l = Label(janela_aluno, text="Meses", font="times 13")
+            data_l.place(x=352, y=70)
+            
+            data_v = Label(janela_aluno, text=aluno["mes"].values[0], font="times 13")
+            data_v.place(x=352, y=88)
+            
+            # data_v = Label(janela_aluno, text='Valor', font="times 13")
+            # data_v.place(x=347, y=108)
+            # data_v = Label(janela_aluno, text='Data', font="times 13")
+            # data_v.place(x=398, y=108)
+
+            for i in range(12):
+                data_v = Label(janela_aluno, text='Valor', font="times 13")
+                data_v.place(x=347 + 93 * i, y=108)
+                data_v = Label(janela_aluno, text='Data', font="times 13")
+                data_v.place(x=398 + 93 * i, y=108)
+
+
+            # data_v = Label(janela_aluno, text='Valor', font="times 13")
+            # data_v.place(x=347 + 93, y=108)
+            # data_v = Label(janela_aluno, text='Data', font="times 13")
+            # data_v.place(x=398 + 93, y=108)
 
 
 
         if alunos.consultar_aluno_existente(documento):
-            dados_aluno = alunos.consultar_aluno(documento)
+            dados_aluno = alunos.consultar_pagamentos_aluno(documento)
             pagina_registro_aluno(dados_aluno)
             
 
