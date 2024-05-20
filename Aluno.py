@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import date 
 
 class Aluno:
     def __init__(self):
@@ -23,7 +24,7 @@ class Aluno:
     def consultar_aluno(self, documento):
         alunos = pd.read_csv('alunos.csv')
         aluno = alunos[alunos['cpf'] == float(documento)]
-        print(aluno)
+        return aluno
 
         # if str(documento) in (alunos['cpf'].values.astype(str)):
 
@@ -46,5 +47,12 @@ class Aluno:
         registro_alunos = registro_alunos[registro_alunos['cpf'] != float(cpf)] 
         registro_alunos.to_csv('alunos.csv', index=False)
 
-  
-     
+        # planilha = pd.read_excel('Registros/Registro Pagamento do Alunos.xlsx', skiprows=2)
+        # df = planilha.fillna(method='ffill')
+        # print(df)
+
+        # print('asdfas')
+        # print(planilha)
+        # print(planilha['MESES'])
+        # print(planilha.columns)
+        # # Obtém as células mescladas do DataFrame 'df'

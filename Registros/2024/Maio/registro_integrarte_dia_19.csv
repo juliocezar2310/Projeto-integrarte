@@ -1,0 +1,17 @@
+fluxo,tipo_transacao,titulo,nome_beneficiario,valor
+Entrada,Conta Bancária/pix,Doação,111212312,454.0
+Entrada,Dinheiro,Doação,111212312,343.0
+Entrada,Conta Bancária/pix,Doação,111212312,1.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,12.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,4.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,3.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,45.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,1.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,6.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,6.0
+Entrada,Conta Bancária/pix,Mensalidade,111212312,3.0
+Entrada,Conta Bancária/pix,Mensalidade,181212312,6.0
+Entrada,Conta Bancária/pix,Mensalidade,123123,54.0
+Entrada,Dinheiro,Mensalidade,123123,45.0
+Entrada,Conta Bancária/pix,Mensalidade,123123,5.0
+Entrada,Conta Bancária/pix,Mensalidade,123123,5.0

@@ -22,15 +22,15 @@ def pagina(window):
     def gerar_relatorio(ano, mes):
         meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
         mes_selecionado = meses[int(mes) - 1]
-        arquivos = os.listdir(f'Registros Mensais/{ano}/{mes_selecionado}')
+        arquivos = os.listdir(f'Registros/{ano}/{mes_selecionado}')
         df = pd.DataFrame()
         if len(arquivos) > 1:
-            df_primario = pd.read_csv(f'Registros Mensais/{ano}/{mes_selecionado}/{arquivos[0]}')
+            df_primario = pd.read_csv(f'Registros/{ano}/{mes_selecionado}/{arquivos[0]}')
             for i in range(len(arquivos)):
-                df_secundario = pd.read_csv(f'Registros Mensais/{ano}/{mes_selecionado}/{arquivos[i]}')
+                df_secundario = pd.read_csv(f'Registros/{ano}/{mes_selecionado}/{arquivos[i]}')
                 df = pd.concat([df, df_secundario], ignore_index=True) 
         else:
-                df = pd.read_csv(f'Registros Mensais/{ano}/{mes_selecionado}/{arquivos[0]}')
+                df = pd.read_csv(f'Registros/{ano}/{mes_selecionado}/{arquivos[0]}')
         soma_entrada = df.query('fluxo == "Entrada"')['valor'].sum()
         soma_saida = df.query('fluxo == "Saída"')['valor'].sum()
         # print(df)
@@ -41,7 +41,7 @@ def pagina(window):
         else: 
             df['Total Lucro'] = soma_entrada - soma_saida
             
-        df.to_excel(f'Registros Mensais/{ano}/{mes_selecionado}/Relatório Mensal {mes_selecionado}.xlsx', index=False)
+        df.to_excel(f'Registros/{ano}/{mes_selecionado}/Relatório Mensal {mes_selecionado}.xlsx', index=False)
 
 
                 

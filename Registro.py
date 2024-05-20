@@ -1,6 +1,9 @@
 import pandas as pd
 from datetime import date
 import os
+from Aluno import Aluno
+
+aluno = Aluno()
 
 class Registro:
     def __init__(self):
@@ -19,11 +22,11 @@ class Registro:
         mes_numerico = date.today().month
         meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
         mes = meses[mes_numerico - 1]
-        if not os.path.exists('Registros Mensais/2024'):
-            os.mkdir('Registros Mensais/2024')
-        if not os.path.exists(f'Registros Mensais/2024/{mes}'):
-            os.mkdir(f'Registros Mensais/2024/{mes}')
-        self.diretorio_mensal = f'Registros Mensais/2024/{mes}'
+        if not os.path.exists('Registros/2024'):
+            os.mkdir('Registros/2024')
+        if not os.path.exists(f'Registros/2024/{mes}'):
+            os.mkdir(f'Registros/2024/{mes}')
+        self.diretorio_mensal = f'Registros/2024/{mes}'
     
     def validar_dados(self, fluxo, tipo_transacao, titulo, nome_beneficiario, valor):
         self.fluxo = fluxo
@@ -52,6 +55,23 @@ class Registro:
         dados = pd.concat([arquivofinal, df], ignore_index=True)
         dados.to_csv(self.nome_arquivo, index=False)
 
+    def registrar_mensalidade(self, aluno):
+        registro_alunos = 'Registros/Registro Pagamento do Alunos.csv'
+        if not os.path.exists(registro_alunos):
+            registro_limpo = pd.DataFrame(columns=["nome", "documento", "ano", "mes", "data", "valor"])
+            registro_limpo.to_csv(registro_alunos, index=False)
+        planilha = pd.read_csv('Registros/Registro Pagamento do Alunos.csv')
+        dia_atual = date.today().day
+        mes_numerico = date.today().month
+        meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+        mes = meses[mes_numerico - 1]
+
+        dados_dict = {'nome': aluno["nome aluno"].values[0], 'documento': self.nome_beneficiario, 'ano': date.today().year, 'mes': mes, 'data': date.today(), 'valor': self.valor}
+        dados_df = pd.DataFrame([dados_dict])
+
+        dados = pd.concat([planilha, dados_df], ignore_index=True)
+        dados.to_csv('Registros/Registro Pagamento do Alunos.csv', index=False)
+
     # def relatorio_mensal(self):
 
     
@@ -68,15 +88,19 @@ class Registro:
                 self.titulo = self.nome_beneficiario
                 self.nome_beneficiario = 'Integrarte'
 
+        
+
         dados_dict = {"fluxo": self.fluxo, "tipo_transacao": self.tipo_transacao, "titulo": self.titulo, "nome_beneficiario": self.nome_beneficiario, "valor": self.valor}
         dados_df = pd.DataFrame([dados_dict])
+        print(self.titulo)
+        print(self.nome_beneficiario)
+
+        if self.titulo == 'Mensalidade':
+            aluno = Aluno()
+            if aluno.consultar_aluno_existente(self.nome_beneficiario):
+                dado_aluno = aluno.consultar_aluno(self.nome_beneficiario)
+
+                self.registrar_mensalidade(dado_aluno)
 
         self.salvar_registro(dados_df)
-
-        arquivofinal = pd.read_csv('registro_integrarte.csv')
-
-        dados = pd.concat([arquivofinal, dados_df], ignore_index=True)
-
-        dados.to_csv('registro_integrarte.csv', index=False)
-        
-        
+    

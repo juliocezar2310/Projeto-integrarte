@@ -37,13 +37,13 @@ def corrige_titulo(titulo, e2):
         
 
 def radio_buttons_entrada(window, titulo_value): 
-    tipo_entrada_doacao = Radiobutton(window, text="Família", variable=titulo_value, value="Doação")
+    tipo_entrada_doacao = Radiobutton(window, text="Família", variable=titulo_value, value="Mensalidade")
     tipo_entrada_doacao.place(x=20,y=45+20)
-    tipo_entrada_mensalidade = Radiobutton(window, text="Sócios", variable=titulo_value, value="Mensalidade")
+    tipo_entrada_mensalidade = Radiobutton(window, text="Sócios", variable=titulo_value, value="Doação")
     tipo_entrada_mensalidade.place(x=20,y=65+20)
     tipo_entrada_acao_social = Radiobutton(window, text="Doação", variable=titulo_value, value="Ação")
     tipo_entrada_acao_social.place(x=100,y=45+20)
-    tipo_entrada_acao_social = Radiobutton(window, text="Eventos", variable=titulo_value, value="Ação")
+    tipo_entrada_acao_social = Radiobutton(window, text="Eventos", variable=titulo_value, value="Eventos")
     tipo_entrada_acao_social.place(x=100,y=65+20)
 
 
