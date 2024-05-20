@@ -4,6 +4,7 @@ from Registro import Registro
 from Aluno import Aluno 
 
 registro = Registro()
+aluno = Aluno()
 
 def pagina(window):
 
@@ -39,12 +40,12 @@ def pagina(window):
         entrada_titulo_nascimento.get().delete(0, 'end')
     
     def criar_aluno(nome_aluno, nome_familiar, documento, data_nascimento):
-        aluno = Aluno(nome_aluno, nome_familiar, documento, data_nascimento)
+        aluno.criar_aluno(nome_aluno, nome_familiar, documento, data_nascimento)
         aluno.salvar_aluno()
 
         
                 
-    botao_registro = Button(window, text='criar aluno', command=lambda: criar_aluno(entrada_titulo_aluno.get(), entrada_titulo_familiar.get(), entrada_titulo_documento.get(), entrada_titulo_nascimento.get()))
+    botao_registro = Button(window, text='criar aluno', command=lambda: (criar_aluno(entrada_titulo_aluno.get(), entrada_titulo_familiar.get(), entrada_titulo_documento.get(), entrada_titulo_nascimento.get()), limpa_campos()))
     botao_registro.place(x=580,y=450)
 
 

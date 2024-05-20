@@ -10,7 +10,6 @@ def pagina(window):
     # Variaveis cujos valores serão definidos por RadioButtons 
     titulo_value = StringVar(window, "0")
     tipo_transacao = StringVar(window, "0")
-    fluxo = StringVar(window, "0")
 
     # Variãveis de Entrada, funcionam Inputs de texto
     entrada_titulo = Entry(window)

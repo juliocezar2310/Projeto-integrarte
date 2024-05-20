@@ -8,15 +8,15 @@ def pagina(window):
 
     # Variáveis de Entrada, funcionam Inputs de texto
     ano = Entry(window)
-    ano.place(x=50,y=234.5 + 80)
+    ano.place(x=50 + 230,y=114.5)
     mes = Entry(window)
-    mes.place(x=50,y=264.5 + 110)
+    mes.place(x=50 + 230,y=174.5)
     
     label_ano = Label(window, text="Ano:", font="times 12")
-    label_ano.place(x=20, y=235 + 60)
+    label_ano.place(x=20 + 230, y=95)
     
     label_mes = Label(window, text="Mês:", font="times 12")
-    label_mes.place(x=20, y=235 + 120)
+    label_mes.place(x=20 + 230, y=155)
        
     #
     def gerar_relatorio(ano, mes):
