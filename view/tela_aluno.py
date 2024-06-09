@@ -1,11 +1,12 @@
 from tkinter import * 
-from Componentes import textos_predefinidos, radio_buttons_entrada, radio_buttons_tipo_transacao
 from Registro import Registro 
 from Aluno import Aluno 
 
 
 registro = Registro()
 alunos = Aluno()
+
+meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
 def pagina(window):
 
@@ -24,16 +25,27 @@ def pagina(window):
             janela_aluno.geometry("1200x600")
 
             canvas = Canvas(janela_aluno)
-            canvas.create_line(10, 83, 1000, 83)
-            canvas.create_line(10, 130, 1000, 130)
+            canvas.create_line(10, 83, 904, 83) # Linha Principal 1
+            canvas.create_line(10, 132, 904, 132) # Linha Principal 2
+            canvas.create_line(10, 310, 904, 310) # Linha Principal 3
+            
+            canvas.create_line(345, 108, 904, 108) # Linha 1 bloco 1
+            canvas.create_line(345, 160, 904, 160) # Linha 2 bloco 1
 
+            canvas.create_line(345, 232, 904, 232) # Linha 1 bloco 2
+            canvas.create_line(345, 257, 904, 257) # Linha 2 bloco 2
+            canvas.create_line(345, 283, 904, 283) # Linha 3 bloco 2
 
-            canvas.create_line(300, 83, 300, 300)
-            canvas.create_line(345, 83, 345, 300)
-            canvas.create_line(395, 83, 395, 300)
-            canvas.create_line(438, 83, 438, 300)
-            # canvas.create_line(10, 85, 1000, 85)
-            # canvas.create_line(10, 115, 1000, 115)
+            canvas.create_line(10, 83, 10, 310) # Coluna Principal 1
+            canvas.create_line(300, 83, 300, 310) # Coluna Principal 2
+            canvas.create_line(345, 83, 345, 310) # Coluna Principal 3
+
+            for i in range(6):
+                canvas.create_line(438 + 93 * i, 83, 438 + 93 * i, 160) # Coluna Mês Bloco 1
+                canvas.create_line(395 + 93 * i, 110, 395 + 93 * i, 160) # Coluna "valor | data" Bloco 1
+                canvas.create_line(438 + 93 * i, 233, 438 + 93 * i, 310) # Coluna Mês Bloco 2
+                canvas.create_line(395 + 93 * i, 260, 395 + 93 * i, 310) # Coluna "valor | data" Bloco 2
+
             canvas.pack(fill=BOTH, expand=1)
 
             label_titulo = Label(janela_aluno, text="INTEGRARTE - Centro Pró-Integração, Cidadania e Arte", font="times 13")
@@ -42,43 +54,50 @@ def pagina(window):
             cnpj.place(x=10, y=45)
             
             nome_l = Label(janela_aluno, text="Nome", font="times 13")
-            nome_l.place(x=15, y=108)
+            nome_l.place(x=15, y=110)
 
-            # nome = Label(janela_aluno, text=aluno["nome"].values[0], font="times 12")
-            # nome.place(x=15, y=135)
-            nome = Label(janela_aluno, text='Lucas Matheus de Oliveira Ramos'*10, wraplength=280, justify='center', font="times 12")
-            nome.place(x=15, y=135)
-
+            nome = Label(janela_aluno, text=aluno["nome"].values[0], wraplength=280, justify='center', anchor='c', font="times 12")
+            nome.place(x=15, y=137)
 
             data_l = Label(janela_aluno, text="Ano", font="times 13")
-            data_l.place(x=304, y=108)
-            data_v = Label(janela_aluno, text=aluno["ano"].values[0], font="times 13")
-            data_v.place(x=304, y=135)
-            
+            data_l.place(x=304, y=110)
+            data_v = Label(janela_aluno, text=aluno["ano"].values[0], font="times 13", justify='center')
+            data_v.place(x=304, y=137)
+
             data_l = Label(janela_aluno, text="Meses", font="times 13")
-            data_l.place(x=352, y=70)
-            
-            data_v = Label(janela_aluno, text=aluno["mes"].values[0], font="times 13")
-            data_v.place(x=352, y=88)
-            
-            # data_v = Label(janela_aluno, text='Valor', font="times 13")
-            # data_v.place(x=347, y=108)
-            # data_v = Label(janela_aluno, text='Data', font="times 13")
-            # data_v.place(x=398, y=108)
+            data_l.place(x=650, y=60)
 
-            for i in range(12):
+            a = 0
+            const_y = 0
+            for mes in meses:
+                data_l = Label(janela_aluno, text=mes, font="times 13", width=9)
+                data_l.place(x=350 + 93*a, y=84 + const_y)
+
+                valor_contribuicao = 0.0
+                data_contribuicao = ' -'
+                filtro_mensal = aluno.query(f'mes == "{mes}"')
+                if len(filtro_mensal) != 0: # Caso tenha acontecido uma contribuição naquele mês, o valor será armazenado nas variáveis
+                    data_contribuicao = str(filtro_mensal['data'][0]).split('-')[2]
+                    valor_contribuicao = (filtro_mensal['valor'][0])
+                data_v = Label(janela_aluno, text=valor_contribuicao, font="times 13") # Valor de Contribuição naquele mês
+                data_v.place(x=355 + 93*a, y=137 + const_y )
+
+                data_v = Label(janela_aluno, text=data_contribuicao, font="times 13") # Valor da Contribuição naquele mês
+                data_v.place(x=405 + 93*a, y=137 + const_y )                
+
+                a += 1
+                if a == 6:
+                    const_y += 150
+                    a = 0
+            for i in range(6):
                 data_v = Label(janela_aluno, text='Valor', font="times 13")
-                data_v.place(x=347 + 93 * i, y=108)
+                data_v.place(x=347 + 93 * i, y=110)
                 data_v = Label(janela_aluno, text='Data', font="times 13")
-                data_v.place(x=398 + 93 * i, y=108)
-
-
-            # data_v = Label(janela_aluno, text='Valor', font="times 13")
-            # data_v.place(x=347 + 93, y=108)
-            # data_v = Label(janela_aluno, text='Data', font="times 13")
-            # data_v.place(x=398 + 93, y=108)
-
-
+                data_v.place(x=398 + 93 * i, y=110)
+                data_v = Label(janela_aluno, text='Data', font="times 13")
+                data_v.place(x=398 + 93 * i, y=110 + 150)
+                data_v = Label(janela_aluno, text='Valor', font="times 13")
+                data_v.place(x=347 + 93 * i, y=110 + 150)
 
         if alunos.consultar_aluno_existente(documento):
             dados_aluno = alunos.consultar_pagamentos_aluno(documento)
