@@ -29,6 +29,11 @@ class Aluno:
     def consultar_pagamentos_aluno(self, documento):
         alunos = pd.read_csv('Registros/Registro Pagamento do Alunos.csv')
         aluno = alunos[alunos['documento'] == float(documento)]
+        print('tamnho é ', len(aluno))
+        if len(aluno) == 0:
+            print(aluno)
+            aluno 
+            return aluno
         return aluno
 
         # if str(documento) in (alunos['cpf'].values.astype(str)):

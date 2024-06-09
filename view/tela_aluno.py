@@ -13,8 +13,8 @@ def pagina(window):
     label_titulo = Label(window, text="Consultar Aluno", font="times 13")
     label_titulo.place(x=228, y=62)
 
-    # Variãveis de Entrada, funcionam Inputs de texto
-    entrada_titulo = Entry(window)
+    
+    entrada_titulo = Entry(window) # Variaveis de Entrada, funcionam Inputs de texto
     entrada_titulo.place(x=230,y=90)
 
     def registro_aluno(documento):
@@ -99,9 +99,26 @@ def pagina(window):
                 data_v = Label(janela_aluno, text='Valor', font="times 13")
                 data_v.place(x=347 + 93 * i, y=110 + 150)
 
+        def pagina_aluno_sem_registro():
+            janela_aluno = Tk()
+            janela_aluno.title('Aluno sem registro!')
+            janela_aluno.geometry("420x100")
+
+            label_titulo = Label(janela_aluno, text="O Aluno selecionado não possui registros de pagamento", font="times 13")
+            label_titulo.place(x=10, y=15)
+
+            botao_fechar_guia = Button(janela_aluno, text='consultar', command=lambda: janela_aluno.destroy() )
+            botao_fechar_guia.place(x=175,y=50)
+
+
+
         if alunos.consultar_aluno_existente(documento):
             dados_aluno = alunos.consultar_pagamentos_aluno(documento)
-            pagina_registro_aluno(dados_aluno)
+            print(len(dados_aluno))
+            if len(dados_aluno) == 0:
+                pagina_aluno_sem_registro()
+            else:
+                pagina_registro_aluno(dados_aluno)
             
 
                 
