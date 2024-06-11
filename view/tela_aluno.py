@@ -1,6 +1,7 @@
 from tkinter import * 
 from Registro import Registro 
 from Aluno import Aluno 
+from PIL import Image, ImageTk
 
 
 registro = Registro()
@@ -10,12 +11,20 @@ meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'A
 
 def pagina(window):
 
-    label_titulo = Label(window, text="Consultar Aluno", font="times 13")
-    label_titulo.place(x=228, y=62)
+    #não está sendo utilizado
+    # label_titulo = Label(window, text="Consultar Aluno", font="times 13")
+    # label_titulo.place(x=228, y=62)
 
+    #criando a tela de fundo com imagem
+    fundo = Image.open('images/buscarAluno.jpg')
+    fundo = fundo.resize((700, 500))
+    fundo = ImageTk.PhotoImage(fundo)
+    panel = Label(window, image=fundo, borderwidth=0)
+    panel.image = fundo
+    panel.place(x=0,y=0)
     
     entrada_titulo = Entry(window) # Variaveis de Entrada, funcionam Inputs de texto
-    entrada_titulo.place(x=230,y=90)
+    entrada_titulo.place(x=230,y=180)
 
     def registro_aluno(documento):
         def pagina_registro_aluno(aluno):
@@ -123,4 +132,4 @@ def pagina(window):
 
                 
     botao_registro = Button(window, text='consultar', command=lambda: registro_aluno(entrada_titulo.get()) )
-    botao_registro.place(x=360,y=85)
+    botao_registro.place(x=360,y=180)

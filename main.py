@@ -21,29 +21,38 @@ def home():
     #coloração do fundo PRINCIPAL
     window.configure(background="#6DC24B")
 
+    #criação da imagem na tela Principal
+    img = Image.open('images/fundo.png')
+    img = img.resize((350, 500))
+    img = ImageTk.PhotoImage(img)
+    panel = Label(window, image=img, borderwidth=0)
+    panel.image = img
+    panel.place(x=350,y=0)
+
     #CRIAÇÃO DO FRAME
     frame_inicio = Frame(window)
 
-    #coloração do fundo SECUNDÁRIO
+    #coloração do fundo Primário
     frame_inicio.configure(background="white")
 
-    img = Image.open('images/logo-integrate.JPG')
-    img = img.resize((278, 128))
-    img = ImageTk.PhotoImage(img)
-    panel = Label(frame_inicio, image=img, borderwidth=0)
-    panel.image = img
-    panel.pack()
+    #criação da imagem de logo
+    logo = Image.open('images/logo-integrate.JPG')
+    logo = logo.resize((278, 128))
+    logo = ImageTk.PhotoImage(logo)
+    panel1 = Label(frame_inicio, image=logo, borderwidth=0)
+    panel1.image = logo
+    panel1.place(x=20,y=20)
 
-    btn_pagina_entrada = Button(frame_inicio, text='Registrar Receita',font=("Arial",13), bg="#FFA500", fg="white", width=16, command=tela_registro_entrada)
-    btn_pagina_entrada.place(x=214, y=155)
-    btn_pagina_saida = Button(frame_inicio, text='Registrar Despesa',font=("Arial",13), bg="#FFA500", fg="white", width=16, command=tela_registro_saida)
-    btn_pagina_saida.place(x=214, y=215)
-    btn_pagina_planilha = Button(frame_inicio, text='Relatório Mensal',font=("Arial",13), bg="#FFA500", fg="white", width=16, command=tela_relatorio_mensal)
-    btn_pagina_planilha.place(x=214, y=275)
-    btn_pagina_planilha = Button(frame_inicio, text='Buscar Aluno',font=("Arial",13), bg="#FFA500", fg="white", width=16, command=tela_buscar_aluno)
-    btn_pagina_planilha.place(x=214, y=335)
+    btn_pagina_entrada = Button(frame_inicio, text='Registrar Receita',font=("Arial",13), bg="#76ABC8", fg="white", width=16, command=tela_registro_entrada)
+    btn_pagina_entrada.place(x=100, y=200)
+    btn_pagina_saida = Button(frame_inicio, text='Registrar Despesa',font=("Arial",13), bg="#76ABC8", fg="white", width=16, command=tela_registro_saida)
+    btn_pagina_saida.place(x=100, y=260)
+    btn_pagina_planilha = Button(frame_inicio, text='Relatório Mensal',font=("Arial",13), bg="#76ABC8", fg="white", width=16, command=tela_relatorio_mensal)
+    btn_pagina_planilha.place(x=100, y=320)
+    btn_pagina_planilha = Button(frame_inicio, text='Buscar Aluno',font=("Arial",13), bg="#76ABC8", fg="white", width=16, command=tela_buscar_aluno)
+    btn_pagina_planilha.place(x=100, y=380)
 
-    frame_inicio.place(relx=0.076,rely=0.1,relwidth=0.85,relheight=0.8)
+    frame_inicio.place(relx=0,rely=0,relwidth=0.50,relheight=1)
 
 
 
