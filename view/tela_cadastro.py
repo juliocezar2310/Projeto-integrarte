@@ -11,7 +11,7 @@ def pagina(window):
     label_titulo_aluno = Label(window, text="Nome Aluno", font="times 13 ")
     label_titulo_aluno.place(x=12, y=50)
 
-    # Variãveis de Entrada, funcionam Inputs de texto
+    # Variãveis de Receita, funcionam Inputs de texto
     entrada_titulo_aluno = Entry(window)
     entrada_titulo_aluno.place(x=14,y=80)
 
@@ -43,12 +43,5 @@ def pagina(window):
         aluno.criar_aluno(nome_aluno, nome_familiar, documento, data_nascimento)
         aluno.salvar_aluno()
 
-        
-                
     botao_registro = Button(window, text='criar aluno', command=lambda: (criar_aluno(entrada_titulo_aluno.get(), entrada_titulo_familiar.get(), entrada_titulo_documento.get(), entrada_titulo_nascimento.get()), limpa_campos()))
     botao_registro.place(x=580,y=450)
-
-
-
-
-#nome aluno,nome familiar,cpf,data nascimento

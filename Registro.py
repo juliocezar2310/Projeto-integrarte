@@ -72,13 +72,10 @@ class Registro:
         dados = pd.concat([planilha, dados_df], ignore_index=True)
         dados.to_csv('Registros/Registro Pagamento do Alunos.csv', index=False)
 
-    # def relatorio_mensal(self):
-
-    
     def novo_registro(self, fluxo, tipo_transacao, titulo, nome_beneficiario, valor):
         self.validar_dados(fluxo, tipo_transacao, titulo, nome_beneficiario, valor)
 
-        if(self.fluxo != "Entrada"):
+        if(self.fluxo != "Receita"):
             print("nome_beneficiario", self.nome_beneficiario)
             print("titulo", self.titulo)
             if self.titulo != "" and self.nome_beneficiario == "":

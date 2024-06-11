@@ -113,9 +113,9 @@ def radio_buttons(window, titulo_value, tipo_transacao, fluxo, e2):
     tipo_transacao_dinheiro = Radiobutton(window, text="Dinheiro", variable=tipo_transacao, value="Dinheiro")
     tipo_transacao_dinheiro.place(x=20,y=180+20)
 
-    entrada = Radiobutton(window, text="Entrada", variable=fluxo, value="Entrada")
+    entrada = Radiobutton(window, text="Receita", variable=fluxo, value="Receita")
     entrada.place(x=300,y=435)
 
     
-    saida = Radiobutton(window, text="Saída", variable=fluxo, value="Saída")
+    saida = Radiobutton(window, text="Despesa", variable=fluxo, value="Despesa")
     saida.place(x=300,y=455)

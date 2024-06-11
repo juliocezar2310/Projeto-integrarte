@@ -1,9 +1,27 @@
-fluxo,tipo_transacao,titulo,nome_beneficiario,valor,Valor Total de Entrada,Valor Total de Saída,Total Prejuizo
-Saída,Conta Bancária/pix,Conta de Água,Integrarte,54.0,95.0,969.0,874.0
-Entrada,Conta Bancária/pix,Mensalidade,PP,32.0,95.0,969.0,874.0
-Saída,Conta Bancária/pix,k,Integrarte,456.0,95.0,969.0,874.0
-Saída,Conta Bancária/pix,Pagamento Professores,Integrarte,153.0,95.0,969.0,874.0
-Saída,Conta Bancária/pix,516,Integrarte,153.0,95.0,969.0,874.0
-Saída,Conta Bancária/pix,Internet,Integrarte,153.0,95.0,969.0,874.0
-Entrada,Conta Bancária/pix,Mensalidade,alberto ,51.0,95.0,969.0,874.0
-Entrada,Conta Bancária/pix,Mensalidade,Crisom,12.0,95.0,969.0,874.0
+Fluxo,Tipo da Transação,Titulo,Nome do Beneficiario,Valor,Extrato Bancario,Saldo Total
+Saída,Conta Bancária/pix,Conta de Água,Integrarte,54.0,9870.0,5600.0
+Entrada,Conta Bancária/pix,Mensalidade,PP,32.0,,
+Saída,Conta Bancária/pix,k,Integrarte,456.0,,
+Saída,Conta Bancária/pix,Pagamento Professores,Integrarte,153.0,,
+Entrada,Conta Bancária/pix,Mensalidade,123123,4.0,,
+Entrada,Conta Bancária/pix,Mensalidade,123123,4.0,,
+Entrada,Conta Bancária/pix,Doação,111212312,454.0,,
+Entrada,Dinheiro,Doação,111212312,343.0,,
+Entrada,Conta Bancária/pix,Doação,111212312,1.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,12.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,4.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,3.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,45.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,1.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,6.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,6.0,,
+Entrada,Conta Bancária/pix,Mensalidade,111212312,3.0,,
+Entrada,Conta Bancária/pix,Mensalidade,181212312,6.0,,
+Entrada,Conta Bancária/pix,Mensalidade,123123,54.0,,
+Entrada,Dinheiro,Mensalidade,123123,45.0,,
+Entrada,Conta Bancária/pix,Mensalidade,123123,5.0,,
+Entrada,Conta Bancária/pix,Mensalidade,123123,5.0,,
+Saída,Conta Bancária/pix,516,Integrarte,153.0,,
+Saída,Conta Bancária/pix,Internet,Integrarte,153.0,,
+Entrada,Conta Bancária/pix,Mensalidade,alberto ,51.0,,
+Entrada,Conta Bancária/pix,Mensalidade,Crisom,12.0,,

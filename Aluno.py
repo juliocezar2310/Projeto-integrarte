@@ -36,8 +36,6 @@ class Aluno:
             return aluno
         return aluno
 
-        # if str(documento) in (alunos['cpf'].values.astype(str)):
-
     def salvar_aluno(self):
         registro_alunos = pd.read_csv('alunos.csv')
 
@@ -56,13 +54,3 @@ class Aluno:
         
         registro_alunos = registro_alunos[registro_alunos['cpf'] != float(cpf)] 
         registro_alunos.to_csv('alunos.csv', index=False)
-
-        # planilha = pd.read_excel('Registros/Registro Pagamento do Alunos.xlsx', skiprows=2)
-        # df = planilha.fillna(method='ffill')
-        # print(df)
-
-        # print('asdfas')
-        # print(planilha)
-        # print(planilha['MESES'])
-        # print(planilha.columns)
-        # # Obtém as células mescladas do DataFrame 'df'

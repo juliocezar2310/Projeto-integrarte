@@ -10,13 +10,7 @@ alunos = Aluno()
 meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
 def pagina(window):
-
-    #não está sendo utilizado
-    # label_titulo = Label(window, text="Consultar Aluno", font="times 13")
-    # label_titulo.place(x=228, y=62)
-
-    #criando a tela de fundo com imagem
-    fundo = Image.open('images/buscarAluno.jpg')
+    fundo = Image.open('images/buscarAluno.jpg') # criando a tela de fundo com imagem
     fundo = fundo.resize((700, 500))
     fundo = ImageTk.PhotoImage(fundo)
     panel = Label(window, image=fundo, borderwidth=0)

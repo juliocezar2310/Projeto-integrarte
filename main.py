@@ -60,7 +60,7 @@ def tela_registro_entrada():
     global window
     window.destroy()
     window = Tk()
-    window.title('Registro de Entrada')
+    window.title('Registro de Receita')
     window.geometry("700x500")
 
     view.tela_entrada.pagina(window)
@@ -72,7 +72,7 @@ def tela_registro_saida():
     global window
     window.destroy()
     window = Tk()
-    window.title('Registrar Dados Saída')
+    window.title('Registrar Dados Despesa')
     window.geometry("700x500")
     
 
